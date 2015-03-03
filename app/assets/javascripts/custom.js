@@ -257,7 +257,6 @@ jQuery(document).ready(function($) {
 
     //google map custom marker icon - .png fallback for IE11
     var is_internetExplorer11 = navigator.userAgent.toLowerCase().indexOf('trident') > -1;
-    var $marker_url = (is_internetExplorer11) ? 'images/map-marker.png' : 'images/map-marker.svg';
 
     //we define here the style of the map
     var style = [{
@@ -272,29 +271,6 @@ jQuery(document).ready(function($) {
         }]
     }];
 
-    //set google map options
-    var map_options = {
-        center: new google.maps.LatLng($latitude, $longitude),
-        zoom: $map_zoom,
-        panControl: true,
-        zoomControl: true,
-        mapTypeControl: false,
-        streetViewControl: true,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        scrollwheel: false,
-        styles: style,
-    }
-    //inizialize the map
-    var map = new google.maps.Map(document.getElementById('google-container'), map_options);
-    //add a custom marker to the map				
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng($latitude, $longitude),
-        map: map,
-        visible: true,
-        icon: $marker_url,
-    });
-
-  
 });
 
 
