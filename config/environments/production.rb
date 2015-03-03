@@ -35,6 +35,42 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
+
+   config.eager_load = true
+
+  # Full error reports are disabled and caching is turned on.
+  config.consider_all_requests_local       = false
+  config.action_controller.perform_caching = true
+
+  # http://blog.arvidandersson.se/2011/10/03/how-to-do-the-asset-serving-dance-on-heroku-cedar-with-rails-3-1
+  # http://bindle.me/blog/index.php/395/caches-cdns-and-heroku-cedar
+  config.static_cache_control = "public, max-age=3600"
+  config.action_dispatch.x_sendfile_header = nil
+  config.assets.allow_debugging = true
+  config.assets.enabled = true
+
+    # Disable Rails's static asset server (Apache or nginx will already do this).
+  config.serve_static_assets = true
+
+  # Compress JavaScripts and CSS.
+  config.assets.js_compressor = :uglifier
+  # config.assets.css_compressor = :sass
+
+  # Do not fallback to assets pipeline if a precompiled asset is missed.
+  # For Heroku...
+  config.assets.initialize_on_precompile = true
+  config.assets.compile = true
+  config.assets.compress = true
+
+  # Generate digests for assets URLs.
+  config.assets.digest = true
+
+  config.assets.precompile += %w( .svg .eot .woff .ttf)
+
+  # Version of your assets, change this if you want to expire all your assets.
+  config.assets.version = '1.0'
+
+
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
