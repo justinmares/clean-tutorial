@@ -10,6 +10,14 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require bootstrap.min
+ *= require animate.min
+ *= require icons
+ *= require owl.theme
+ *= require owl.carousel
+ *= require nivo-lightbox
+ *= require nivo_themes/default/default.css
+ *= require styles.css
+ *= require responsive.css
+ *= require colors/blue.css
  */
