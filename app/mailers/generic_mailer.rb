@@ -6,7 +6,7 @@ class GenericMailer < ActionMailer::Base
 
   def signup_alert(user)
     @user = user
-    mail :to => ['stuartchaney22@gmail.com'],
+    mail :to => ['stuartchaney22@gmail.com', 'jwmares@gmail.com '],
     :subject => "Someone just signed up"
   end
 
