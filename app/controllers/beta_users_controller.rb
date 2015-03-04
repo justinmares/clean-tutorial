@@ -28,7 +28,10 @@ class BetaUsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to '/?signup=true', notice: 'Thanks for signing up. We will be in touch soon!' }
+        format.html do
+          GenericMailer.signup_alert(@user).deliver!
+          redirect_to '/?signup=true', notice: 'Thanks for signing up. We will be in touch soon!'
+        end
       else
         format.html do
           render 'visitors/index', notice: 'Please Enter a valid email address'

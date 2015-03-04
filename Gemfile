@@ -24,6 +24,7 @@ group :development do
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'mailcatcher', require: false
 end
 group :production do
   gem 'rails_12factor'
