@@ -521,7 +521,7 @@ strong,
 }
 
 .sticky-navigation .navbar-brand {
-    padding: 18px 15px;
+    padding: 24px 15px;
 }
 
 .sticky-navigation .navbar-brand img {
@@ -1220,7 +1220,8 @@ strong,
 
 
 .logo{
-  font-family: 'Pacifico', cursive;
-  font-size: 50px;
-  color:#fff;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 30px;
+  color: #23527c;
+  opacity: 0.9;
 }
