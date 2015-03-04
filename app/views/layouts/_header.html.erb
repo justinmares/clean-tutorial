@@ -56,6 +56,16 @@
                 <div class="row">
                     <div class="col-md-12">
 
+                      <%# Rails flash messages styled for Bootstrap 3.0 %>
+                      <% flash.each do |name, msg| %>
+                        <% if msg.is_a?(String) %>
+                          <div class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+                          </div>
+                        <% end %>
+                      <% end %>
+
                         <!-- HEADING AND BUTTONS -->
                         <div class="intro-section">
 
@@ -68,17 +78,11 @@
                                 <div class="col-sm-10 col-sm-offset-1">
                                     <div class="horizontal-subscribe-form">
 
-                                        <form class="form-inline mailchimp">
-                                            
-                                            <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Enter your Email">
+                                      <%= form_for @user, html: {class: 'form-inline mailchimp'} do |f| %>
+                                        <%= f.text_field :email, id: 'cf-email', class: 'form-control input-box', placeholder: 'Enter your Email', type: 'email', required: 'true' %>
+                                        <button type="submit" class="btn btn-primary standard-button">Get Early Access</button>
+                                      <% end %>
 
-                                            <button type="submit" class="btn btn-primary standard-button">Get Early Access</button>
-                                            
-                                        </form>
-
-                                        <!-- MAILCHIMP SUCCESS AND ERROR MESSAGE -->
-                                        <p class="mailchimp-success white-text"><span class="icon-check-alt2 colored-text"></span>Thanks! Please confirm your subscription from your email inbox</p>
-                                        <p class="mailchimp-error white-text"><span class="icon-close-alt2"></span>Error! Please enter correct email</p>
                                     </div>
                                 </div>
                             </div>

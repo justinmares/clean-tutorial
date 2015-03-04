@@ -477,19 +477,11 @@
                         <h2 class="white-text strong wow fadeInLeft" data-wow-duration="2s" data-wow-offset="40">Get Early Access Now!</h2>
 
                         <div class="horizontal-subscribe-form">
-
-                                        <form class="form-inline mailchimp">
-                                            
-                                            <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Enter your Email">
-
-                                            <button type="submit" class="btn btn-primary standard-button">Get Early Access</button>
-                                            
-                                        </form>
-
-                                        <!-- MAILCHIMP SUCCESS AND ERROR MESSAGE -->
-                                        <p class="mailchimp-success white-text"><span class="icon-check-alt2 colored-text"></span>Thanks! Please confirm your subscription from your email inbox</p>
-                                        <p class="mailchimp-error white-text"><span class="icon-close-alt2"></span>Error! Please enter correct email</p>
-                                    </div>
+                            <%= form_for @user, html: {class: 'form-inline mailchimp'} do |f| %>
+                              <%= f.text_field :email, id: 'cf-email', class: 'form-control input-box', placeholder: 'Enter your Email', type: 'email', required: 'true' %>
+                              <button type="submit" class="btn btn-primary standard-button">Get Early Access</button>
+                            <% end %>
+                        </div>
 
                     </div>
 
