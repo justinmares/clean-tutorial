@@ -148,26 +148,6 @@ $(window).resize(function() {
     }
 
 
-    /*---------------------------------------*/
-    /*	SCREENSHOT CAROUSEL
-	/*---------------------------------------*/
-
-    $("#screenshots").owlCarousel({
-        navigation: false,
-        slideSpeed: 300,
-        paginationSpeed: 400,
-        singleItem: true
-    });
-
-
-    /*---------------------------------------*/
-    /*	SCREENSHOT LIGHTBOX
-	/*---------------------------------------*/
-
-    $('#screenshots a').nivoLightbox({
-        effect: 'fadeScale',
-    });
-
 
     /*---------------------------------------*/
     /*	PLACEHOLDER FIX
