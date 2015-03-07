@@ -478,7 +478,7 @@
 
                         <div class="horizontal-subscribe-form">
                             <%= form_for @user, html: {class: 'form-inline mailchimp'} do |f| %>
-                              <%= f.text_field :email, id: 'cf-email', class: 'form-control input-box', placeholder: 'Enter your Email', type: 'email', required: 'true' %>
+                              <%= f.text_field :email, class: 'form-control input-box', placeholder: 'Enter your Email', type: 'email', required: 'true' %>
                               <button type="submit" class="btn btn-primary standard-button">Get Early Access</button>
                             <% end %>
                         </div>
@@ -490,34 +490,6 @@
         </div>
     </section>
 
-
-    <!-- REGISTRATION FORM FOR POPUP BOX -->
-    <div class="modal fade bs-example-modal-sm" id="stamp-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="vertical-registration-form">
-                    <h4 class="dark-text form-heading">Get 1 Month FREE Trial Now</h4>
-                    <form class="registration-form" id="contact-form">
-                        <input type="text" id="cf-name" name="name" class="form-control input-box" placeholder="Name">
-                        <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Email">
-                        <input type="text" id="cf-subject" name="subject" class="form-control input-box" placeholder="Subject">
-                        <textarea name="message" id="cf-message" class="form-control textarea-box" rows="4" placeholder="Message"></textarea>
-                        <button class="btn btn-primary standard-button">Get Started</button>
-                    </form>
-                    <p class="email-success dark-text">
-                        <span class="icon-check-alt2 colored-text"></span>Email sent seuccessfully
-                    </p>
-                    <p class="email-error dark-text">
-                        <span class="icon-close-alt2"></span>Error! Please check all fields filled correctly
-                    </p>
-                    <!-- MAILCHIMP ALERTS 
-			        <p class="mailchimp-success dark-text"><span class="icon-check-alt2 colored-text"></span>We sent the confirmation to your email</p>
-			        <p class="mailchimp-error dark-text"><span class="icon-close-alt2"></span>Error! Please check all fields filled correctly</p>
-			        -->
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- FOOTER -->
     <footer class="footer grey-bg">

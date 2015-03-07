@@ -11,7 +11,18 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require bootstrap-sprockets
-//= require_tree .
+//= require smoothscroll
+//= require bootstrap.min
+//= require custom
+//= require_self
+//
+
+<script>
+  /* PRE LOADER */
+  jQuery(window).load(function () {
+      "use strict";
+      jQuery(".status").fadeOut();
+      jQuery(".preloader").delay(1000).fadeOut("slow");
+  })
+</script>
+
